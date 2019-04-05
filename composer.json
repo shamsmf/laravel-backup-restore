@@ -1,0 +1,54 @@
+{
+    "name": "shams/laravel-backup-restore",
+    "description": "Automate Laravel Backup into AWS S3 and Restore from AWS.",
+    "keywords": [
+        "shams",
+        "backup",
+        "restore",
+        "database",
+        "laravel-backup"
+    ],
+    "type": "library",
+    "authors": [
+        {
+            "name": "shamsrk",
+            "email": "mdshamsreza69@gmail.com",
+            "role": "developer"
+        }
+    ],
+    "require": {
+        "league/flysystem": "^1.0.8",
+        "league/flysystem-aws-s3-v3": "^1.0"
+    },
+    "minimum-stability": "dev",
+    "require-dev": {
+        "laravel/slack-notification-channel": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Shams\\Backup\\": "src"
+        },
+        "files": [
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Shams\\Backup\\BackupServiceProvider"
+            ]
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit"
+    },
+    "suggest": {
+        "laravel/slack-notification-channel": "Required for sending notifications via Slack"
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
